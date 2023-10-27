@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Senha com JavaScript</title>
+</head>
+<body>
+    <h1>Validação de Senha</h1>
+
+    <form id="senhaForm">
+        <label for="senha">Digite uma senha (mínimo 6 caracteres):</label>
+        <input type="password" id="senha" required>
+        <br>
+
+        <button type="button" onclick="verificarSenha()">Verificar Senha</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function verificarSenha() {
+            var senha = document.getElementById('senha').value;
+            var mensagem = '';
+
+            if (senha.length >= 6) {
+                mensagem = 'Senha válida!';
+            } else {
+                mensagem = 'A senha deve ter pelo menos 6 caracteres.';
+            }
+
+            document.getElementById('mensagem').textContent = mensagem;
+        }
+    </script>
+</body>
+</html>
